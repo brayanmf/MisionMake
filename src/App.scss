@@ -1,0 +1,125 @@
+$main-color: #d64d1b;
+$second-color: rgb(238, 238, 238);
+$third-color: rgb(40, 62, 235);
+$modal-color: rgba(0, 0, 0, 0.556);
+
+.header {
+	position: sticky;
+	top: 0;
+	padding: 1rem;
+	background-color: $main-color;
+	color: $second-color;
+	display: flex;
+	justify-content: space-between;
+	&__title {
+		text-align: center;
+	}
+	&__btn {
+		cursor: pointer;
+		color: $main-color;
+		border: none;
+		border-radius: 10px;
+		margin: 10px 5px;
+		&:hover {
+			background-color: $third-color;
+		}
+	}
+}
+.content {
+	background-color: $second-color;
+	padding: 1rem;
+	&__title {
+		text-align: center;
+		font-size: 2rem;
+		margin: 0rem;
+	}
+	&__products {
+		display: grid;
+		gap: 1rem;
+		grid-auto-rows: 22rem;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+	}
+}
+
+.card {
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 2rem;
+	&__img {
+		display: block;
+		height: 150px;
+		margin: auto;
+	}
+	&__title {
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 2rem;
+		text-align: center;
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 1.2rem;
+		&__time {
+			font-weight: bold;
+		}
+		&__btn {
+			border: none;
+			padding: 5px;
+			border-radius: 10px;
+			background-color: $third-color;
+			color: $second-color;
+			cursor: pointer;
+		}
+	}
+}
+.modal {
+	position: fixed;
+	overflow-y: auto;
+	z-index: 2;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background-color: $modal-color;
+
+	transition: transform 0.3s ease;
+	transform: translate(100%, 0);
+	display: flex;
+	cursor: pointer;
+
+	&__btn {
+		border: none;
+		padding: 5px;
+		border-radius: 5px;
+		cursor: pointer;
+		background-color: $main-color;
+		color: $second-color;
+	}
+	&__product {
+		background-color: #fff;
+		cursor: default;
+		margin: auto;
+		padding: 20px;
+		width: 50%;
+		border-radius: 10px;
+	}
+	&__title {
+		text-align: center;
+		font-weight: bold;
+	}
+	&__img {
+		display: block;
+		width: 40%;
+		height: 300px;
+		margin: auto;
+	}
+	&__rating {
+		display: flex;
+		justify-content: space-between;
+	}
+	&.active {
+		transform: translate(0, 0);
+	}
+}

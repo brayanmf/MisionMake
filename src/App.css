@@ -1,38 +1,122 @@
-.App {
+.header {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background-color: #d64d1b;
+  color: #eeeeee;
+  display: flex;
+  justify-content: space-between;
+}
+.header__title {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header__btn {
+  cursor: pointer;
+  color: #d64d1b;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 5px;
+}
+.header__btn:hover {
+  background-color: #283eeb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content {
+  background-color: #eeeeee;
+  padding: 1rem;
+}
+.content__title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0rem;
+}
+.content__products {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 22rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+}
+.card__img {
+  display: block;
+  height: 150px;
+  margin: auto;
+}
+.card__title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 2rem;
+  text-align: center;
+}
+.card__content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+.card__content__time {
+  font-weight: bold;
+}
+.card__content__btn {
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #283eeb;
+  color: #eeeeee;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.modal {
+  position: fixed;
+  overflow-y: auto;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.556);
+  transition: transform 0.3s ease;
+  transform: translate(100%, 0);
+  display: flex;
+  cursor: pointer;
+}
+.modal__btn {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #d64d1b;
+  color: #eeeeee;
+}
+.modal__product {
+  background-color: #fff;
+  cursor: default;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  border-radius: 10px;
+}
+.modal__title {
+  text-align: center;
+  font-weight: bold;
+}
+.modal__img {
+  display: block;
+  width: 40%;
+  height: 300px;
+  margin: auto;
+}
+.modal__rating {
+  display: flex;
+  justify-content: space-between;
+}
+.modal.active {
+  transform: translate(0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */
